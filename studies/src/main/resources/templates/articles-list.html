@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Articles - List</title>
+</head>
+<body>
+  <div th:each="article : ${articles}">
+    <a th:text="${article.name}" th:field="${article.url}"></a>
+  </div>
+  <br/>
+  <!-- Another way -->
+  <div th:with="firstArticle=${articles[0]}">
+    <a th:text="${firstArticle.name}" th:href="${firstArticle.url}"></a>
+  </div>
+  <br/>
+  <div th:each="article : ${articles}", th:with="articleName=${article.name}, articleUrl=${article.url}">
+    <a th:text="${articleName}" th:href="${articleUrl}"></a>
+  </div>
+</body>
+</html>

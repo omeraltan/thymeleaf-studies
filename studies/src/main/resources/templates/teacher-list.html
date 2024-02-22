@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Teacher - List</title>
+</head>
+<body>
+<label><h4>We have Elvis Operator</h4></label>
+<hr>
+<div th:each="teacher : ${teachers}">
+  <a th:text="${teacher.additionalSkills}"/> <a th:text="${teacher.gender}"/>
+  <a th:text="${teacher.active} ? 'ACTIVE' : 'RETIRED'"/>
+</div>
+<br>
+<hr>
+<div th:each="teacher : ${teachers}">
+  <span th:if="${teacher.gender == 'Female'}">femalee</span>
+  <span th:unless="${teacher.gender == 'Male'}">Malle</span>
+</div>
+<hr>
+<div>
+
+</div>
+</body>
+</html>
