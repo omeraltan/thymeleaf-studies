@@ -3,6 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <title>Student Registration Form</title>
+  <link th:href="@{../static/styles/cssandjs/main.css}" rel="stylesheet">
+  <script type="text/javascript" th:src="@{../static/styles/cssandjs/action.js}"></script>
 </head>
 <body>
 <h3>Student Registration Form</h3>
@@ -34,7 +36,9 @@
                          th:text="${tempSystem}" />
   <br/><br/>
 
+  <p>Carefully Styled Heading</p>
   <input type="submit" value="Submit"/>
+  <button type="button" th:onclick="showAlert()">Show Alert</button>
 
 </form>
 </body>

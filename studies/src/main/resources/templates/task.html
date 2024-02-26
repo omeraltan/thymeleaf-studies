@@ -9,7 +9,19 @@
 <header th:replace="fragments :: header"/>
 <div>
   <br/>
-  <p>Task controller</p>
+  <div class="form-floating">
+    <select class="form-select" id="floatingSelect" aria-label="Floating label select example">
+      <option selected disabled>Open this select menu</option>
+      <option th:value="'M'" th:text="Male"/>
+      <option value="'F" th:text="Female"/>
+    </select>
+    <br/>
+    <select class="form-select" th:field="*{countries}">
+      <option th:each="tempCountry : ${countries}" th:value="${tempCountry}" th:text="${tempCountry}"/>
+    </select>
+    <label for="floatingSelect">Works with selects</label>
+  </div>
+  <br/>
 </div>
 <div th:insert="fragments :: footer"/>
 </body>
